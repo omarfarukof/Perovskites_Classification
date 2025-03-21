@@ -681,12 +681,12 @@ def _(
 
 @app.cell
 def _(
+    OneHotEncoder,
     X_features,
     X_test,
     auc,
     col_encoders,
     gen_report_button,
-    label_binarize,
     mo,
     model,
     np,
@@ -704,7 +704,8 @@ def _(
 
     # Step 2: Binarize y_test
     n_classes = len(_class)
-    y_test_bin = label_binarize(y_test, classes=_class)
+    ohe = OneHotEncoder()
+    y_test_bin = ohe.fit_transform(y_test.values.reshape(-1,1)).toarray()
 
     # Step 3: Compute ROC curves for each class
     fpr, tpr, roc_auc = {}, {}, {}
@@ -757,6 +758,7 @@ def _(
         i,
         mean_tpr,
         n_classes,
+        ohe,
         roc_auc,
         tpr,
         y_probs,
