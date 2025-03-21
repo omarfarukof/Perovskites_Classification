@@ -579,7 +579,8 @@ def _(
         elif model_name == 'SVM Classifier':
             _model = SVC(
                 class_weight=class_weight_dict,
-                random_state=42
+                random_state=42,
+                probability=True
             )
 
         elif model_name == 'LightGBM Classifier':
