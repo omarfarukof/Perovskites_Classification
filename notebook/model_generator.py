@@ -56,17 +56,22 @@ def _():
 
 @app.cell
 def _():
-    from sklearn.metrics import (classification_report, roc_auc_score,
+    from sklearn.metrics import (classification_report, roc_curve, roc_auc_score,
                                  confusion_matrix, accuracy_score, f1_score, precision_score, 
                                  recall_score)
+    from sklearn.preprocessing import label_binarize
+    from sklearn.metrics import auc
     return (
         accuracy_score,
+        auc,
         classification_report,
         confusion_matrix,
         f1_score,
+        label_binarize,
         precision_score,
         recall_score,
         roc_auc_score,
+        roc_curve,
     )
 
 
@@ -652,6 +657,96 @@ def _(
         class_names=_labels,
         digits=3
     )
+    return
+
+
+@app.cell
+def _(
+    X_features,
+    X_test,
+    auc,
+    col_encoders,
+    gen_report_button,
+    label_binarize,
+    mo,
+    model,
+    np,
+    plt,
+    roc_curve,
+    target_ui,
+    y_test,
+):
+    mo.stop(not gen_report_button.value)
+
+    _class = col_encoders[target_ui.value].classes_
+
+    # Step 1: Get predicted probabilities
+    y_probs = model.predict_proba(X_test[X_features])
+
+    # Step 2: Binarize y_test
+    n_classes = len(_class)
+    y_test_bin = label_binarize(y_test, classes=_class)
+
+    # Step 3: Compute ROC curves for each class
+    fpr, tpr, roc_auc = {}, {}, {}
+    for i in range(n_classes):
+        fpr[i], tpr[i], _ = roc_curve(y_test_bin[:, i], y_probs[:, i])
+        roc_auc[i] = auc(fpr[i], tpr[i])
+
+    # Step 4: Compute micro-average
+    fpr["micro"], tpr["micro"], _ = roc_curve(y_test_bin.ravel(), y_probs.ravel())
+    roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
+
+    # Step 5: Compute macro-average (interpolated)
+    all_fpr = np.unique(np.concatenate([fpr[i] for i in range(n_classes)]))
+    mean_tpr = np.zeros_like(all_fpr)
+    for i in range(n_classes):
+        mean_tpr += np.interp(all_fpr, fpr[i], tpr[i])
+    mean_tpr /= n_classes
+    fpr["macro"] = all_fpr
+    tpr["macro"] = mean_tpr
+    roc_auc["macro"] = auc(fpr["macro"], tpr["macro"])
+
+    # Step 6: Plot
+    plt.figure(figsize=(8, 6))
+    colors = ['blue', 'red', 'green', 'orange']
+
+    # Plot individual classes
+    for i, color in zip(range(n_classes), colors):
+        plt.plot(fpr[i], tpr[i], color=color, lw=2,
+                 label=f'Class {i} (AUC = {roc_auc[i]:.2f})')
+
+    # Plot micro and macro averages
+    plt.plot(fpr["micro"], tpr["micro"], color='deeppink', linestyle=':', lw=4,
+             label=f'Micro-average (AUC = {roc_auc["micro"]:.2f})')
+    plt.plot(fpr["macro"], tpr["macro"], color='navy', linestyle=':', lw=4,
+             label=f'Macro-average (AUC = {roc_auc["macro"]:.2f})')
+
+    plt.plot([0, 1], [0, 1], 'k--', lw=2)
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Multiclass ROC Curve')
+    plt.legend(loc="lower right")
+
+
+    plt.gca()
+    return (
+        all_fpr,
+        color,
+        colors,
+        fpr,
+        i,
+        mean_tpr,
+        n_classes,
+        roc_auc,
+        tpr,
+        y_probs,
+        y_test_bin,
+    )
+
+
+@app.cell
+def _():
     return
 
 
