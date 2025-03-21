@@ -1,0 +1,546 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.11.22"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "1903954faf09a68d969bb22ca8ca3c15",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "65367a2d6f16e48857ea652d416f285f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "6a680549286feabd8093014c41824aee",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "c6630ba18056d4116127a5e7f80fefba",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "cf67e086aa899852fedc291902972320",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "50643d8dcd4ff63b4bde5da3834a3cfa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "360402496c3a04dcce9f76eae0bff352",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "177d9426f836f5a7974a6de7873db090",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div><marimo-ui-element object-id='Xref-0' random-id='77c19c29-b777-88fe-54d0-c854a2b9130d'><marimo-file data-initial-value='[]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;h1 id=&#92;&quot;load-dataset-csv&#92;&quot;&gt;Load Dataset (csv)&lt;/h1&gt;&lt;/span&gt;&quot;' data-filetypes='[&quot;.csv&quot;]' data-multiple='false' data-kind='&quot;area&quot;'></marimo-file></marimo-ui-element></div><div><span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\"><strong>perovskite_data.csv</strong></span></span></div><div><marimo-ui-element object-id='SFPL-0' random-id='7ba83227-a6dc-ff21-8ac3-0fe5383bf58a'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Load Data&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "a459cc4375153a23455476f2337977b1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "7904ade81b4411491c8346e04734d466",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Kclp-0' random-id='b33dbe88-5610-7fc7-a6d0-e5acb25b1c29'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;./@file/1572-6974-iFKwu5Wl.csv&quot;' data-total-rows='5329' data-total-columns='19' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;S.No&quot;, [&quot;integer&quot;, &quot;int64&quot;]], [&quot;Compound&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;A&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;B&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;In literature&quot;, [&quot;boolean&quot;, &quot;bool&quot;]], [&quot;Lowest distortion&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;v(A)&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;v(B)&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;r(AXII)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(AVI)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(BVI)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;EN(A)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;EN(B)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;l(A-O)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;l(B-O)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u0394ENR&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;tG&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u03c4&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;&#92;u03bc&quot;, [&quot;number&quot;, &quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-row-headers='[]' data-has-stable-row-id='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "f126fd6f59d7104fb36c73e7d68aa7db",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='emfo-0' random-id='b6cae3df-7157-8a36-a7e0-acf5ffc9ce7d'><marimo-table data-initial-value='[0, 1, 2, 3, 4, 7]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;h2 id=&#92;&quot;select-features-to-exclude&#92;&quot;&gt;Select features to exclude&lt;/h2&gt;&lt;/span&gt;&quot;' data-data='[{&quot;value&quot;: &quot;S.No&quot;}, {&quot;value&quot;: &quot;Compound&quot;}, {&quot;value&quot;: &quot;A&quot;}, {&quot;value&quot;: &quot;B&quot;}, {&quot;value&quot;: &quot;In literature&quot;}, {&quot;value&quot;: &quot;Lowest distortion&quot;}, {&quot;value&quot;: &quot;v(A)&quot;}, {&quot;value&quot;: &quot;v(B)&quot;}, {&quot;value&quot;: &quot;r(AXII)(&#92;u00c5)&quot;}, {&quot;value&quot;: &quot;r(AVI)(&#92;u00c5)&quot;}]' data-total-rows='19' data-total-columns='1' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-selection='&quot;multi&quot;' data-show-filters='false' data-show-download='true' data-show-column-summaries='true' data-row-headers='[]' data-has-stable-row-id='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "205d58f15b98b93686cb4b8eedb0a317",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "2d7ce859b9b15c5f867245282f44faa5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='nWHF-0' random-id='3fc206ce-de35-b5ac-408d-00544e8d189c'><marimo-table data-initial-value='[]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;h2 id=&#92;&quot;select-features-to-remove-data&#92;&quot;&gt;Select features to remove data&lt;/h2&gt;&lt;/span&gt;&quot;' data-data='[{&quot;value&quot;: &quot;EN(B)&quot;}, {&quot;value&quot;: &quot;&#92;u0394ENR&quot;}, {&quot;value&quot;: &quot;l(B-O)(&#92;u00c5)&quot;}, {&quot;value&quot;: &quot;&#92;u03c4&quot;}, {&quot;value&quot;: &quot;r(BVI)(&#92;u00c5)&quot;}, {&quot;value&quot;: &quot;l(A-O)(&#92;u00c5)&quot;}, {&quot;value&quot;: &quot;r(AXII)(&#92;u00c5)&quot;}, {&quot;value&quot;: &quot;v(A)&quot;}, {&quot;value&quot;: &quot;tG&quot;}, {&quot;value&quot;: &quot;EN(A)&quot;}]' data-total-rows='13' data-total-columns='1' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-selection='&quot;multi&quot;' data-show-filters='false' data-show-download='true' data-show-column-summaries='true' data-row-headers='[]' data-has-stable-row-id='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "0bd441fc7bcb40c5bd998e3a6beb5cb1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div><marimo-ui-element object-id='iLit-0' random-id='d41bc7ac-930e-f73d-51fd-eaeb58f090c1'><marimo-table data-initial-value='[]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;h3 id=&#92;&quot;select-data-to-remove-from&#92;&quot;&gt;Select data to remove from [ &lt;strong&gt;&#92;u03c4&lt;/strong&gt; ]&lt;/h3&gt;&lt;/span&gt;&quot;' data-data='[{&quot;key&quot;: &quot;-&quot;, &quot;value&quot;: 3143}, {&quot;key&quot;: &quot;4.9302353087486&quot;, &quot;value&quot;: 6}, {&quot;key&quot;: &quot;8.82962990452681&quot;, &quot;value&quot;: 6}, {&quot;key&quot;: &quot;5.34587247762237&quot;, &quot;value&quot;: 6}, {&quot;key&quot;: &quot;7.24549560899301&quot;, &quot;value&quot;: 5}, {&quot;key&quot;: &quot;7.17810702003697&quot;, &quot;value&quot;: 5}, {&quot;key&quot;: &quot;4.82758238527304&quot;, &quot;value&quot;: 5}, {&quot;key&quot;: &quot;5.05531968228843&quot;, &quot;value&quot;: 5}, {&quot;key&quot;: &quot;4.25823496998106&quot;, &quot;value&quot;: 5}, {&quot;key&quot;: &quot;6.04829349315938&quot;, &quot;value&quot;: 4}]' data-total-rows='1608' data-total-columns='1608' data-banner-text='&quot;Only showing 50 of 1608 columns.&quot;' data-pagination='true' data-page-size='10' data-selection='&quot;multi&quot;' data-show-filters='false' data-show-download='true' data-show-column-summaries='false' data-row-headers='[]' data-has-stable-row-id='false'></marimo-table></marimo-ui-element></div><div><marimo-ui-element object-id='iLit-1' random-id='b8d6c9ca-f48f-8b0a-9d77-248608546511'><marimo-table data-initial-value='[]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;h3 id=&#92;&quot;select-data-to-remove-from-va&#92;&quot;&gt;Select data to remove from [ &lt;strong&gt;v(A)&lt;/strong&gt; ]&lt;/h3&gt;&lt;/span&gt;&quot;' data-data='[{&quot;key&quot;: &quot;not balanced&quot;, &quot;value&quot;: 1881}, {&quot;key&quot;: &quot;element not in BV&quot;, &quot;value&quot;: 1233}, {&quot;key&quot;: &quot;3&quot;, &quot;value&quot;: 935}, {&quot;key&quot;: &quot;2&quot;, &quot;value&quot;: 884}, {&quot;key&quot;: &quot;1&quot;, &quot;value&quot;: 222}, {&quot;key&quot;: &quot;4&quot;, &quot;value&quot;: 146}, {&quot;key&quot;: &quot;5&quot;, &quot;value&quot;: 28}]' data-total-rows='7' data-total-columns='7' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-selection='&quot;multi&quot;' data-show-filters='false' data-show-download='true' data-show-column-summaries='true' data-row-headers='[]' data-has-stable-row-id='false'></marimo-table></marimo-ui-element></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "254d26f87dd4c137a6c1d1943f172215",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='SFPL-1' random-id='1bf097e8-bafa-52ad-3e78-8db4bf54bb07'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Remove Selected Data&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "14d0fbcd29a5501055b88791fe11b766",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "ed5c0f38f4e6c98016c0765a04fa2dd3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "d5a849c2b0dbcabbdc8cccb5523084ba",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "3b11a7188e57207a97e84aa584d7f15e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "6253b22a5049187aa23ec9889972d419",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "This cell raised an exception: NameError('name 'y_train' is not defined')",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/omarf/Project/EEE_4709_Project/.venv/lib/python3.12/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">141</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_6974/__marimo__cell_DnEU_.py&quot;</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">classes</span> <span class=\"o\">=</span> <span class=\"n\">np</span><span class=\"o\">.</span><span class=\"n\">unique</span><span class=\"p\">(</span><span class=\"n\">y_train</span><span class=\"p\">)</span>\n<span class=\"w\">                        </span><span class=\"pm\">^^^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;y_train&#39; is not defined</span>\n</pre></div>\n</span>"
+        }
+      ]
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "d1740dbc6a3c9b8e22e00ae1a4d3e736",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (NameError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "46d819825dd2c8a7d8548307f2c95624",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (NameError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "1911699be7cabe5923d29c836771df90",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (NameError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "57e49e47151561b94567549e32909eda",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "de8c2a89d04d1e9a8369e1b9127a4fd6",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (NameError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "822964ccdde9902ecf17b3cc7f07fd4d",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (NameError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kuUk",
+      "code_hash": "3a01a1fa0863c533a1e40e8273e74328",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "This cell raised an exception: NameError('name 'remove_data_col' is not defined')",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/omarf/Project/EEE_4709_Project/.venv/lib/python3.12/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">141</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_6974/__marimo__cell_kuUk_.py&quot;</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"k\">for</span> <span class=\"n\">_col</span> <span class=\"ow\">in</span> <span class=\"n\">remove_data_col</span><span class=\"p\">:</span>\n<span class=\"w\">                </span><span class=\"pm\">^^^^^^^^^^^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;remove_data_col&#39; is not defined. Did you mean: &#39;remove_data_button&#39;?</span>\n</pre></div>\n</span>"
+        }
+      ]
+    },
+    {
+      "id": "awOe",
+      "code_hash": "1d35189e1f7c93643787338c4a4e9701",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"\\u03c4\": [], \"v(A)\": []}"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pBbz",
+      "code_hash": "359935ebe653be802a6e7cc26280cd6a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='pBbz-0' random-id='a286e769-076e-fbe7-ef21-0e89327bb26c'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;./@file/1272-6974-pwh6I9yQ.csv&quot;' data-total-rows='2186' data-total-columns='13' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;EN(A)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;EN(B)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;Lowest distortion&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;l(A-O)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;l(B-O)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(AVI)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(AXII)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(BVI)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;tG&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;&#92;u0394ENR&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u03bc&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u03c4&quot;, [&quot;string&quot;, &quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-row-headers='[&quot;&quot;]' data-has-stable-row-id='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "eGdv",
+      "code_hash": "255718358c77fb97726da660724f98d7",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "This cell raised an exception: NameError('name 'prep_data' is not defined')",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/omarf/Project/EEE_4709_Project/.venv/lib/python3.12/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">142</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">last_expr</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n<span class=\"w\">           </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_6974/__marimo__cell_eGdv_.py&quot;</span>, line <span class=\"m\">2</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">mo</span><span class=\"o\">.</span><span class=\"n\">output</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"n\">prep_data</span><span class=\"o\">.</span><span class=\"n\">isnull</span><span class=\"p\">()</span><span class=\"o\">.</span><span class=\"n\">sum</span><span class=\"p\">())</span>\n<span class=\"w\">                     </span><span class=\"pm\">^^^^^^^^^</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;prep_data&#39; is not defined</span>\n</pre></div>\n</span>"
+        }
+      ]
+    },
+    {
+      "id": "SeEL",
+      "code_hash": "5a1a9e9ae0e0787d7698898d97223411",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div><span class=\"markdown prose dark:prose-invert\"><h3 id=\"lowest-distortion\">Lowest distortion</h3></span></div><div><marimo-ui-element object-id='SeEL-0' random-id='56fba902-4e47-5a62-e75a-40b353e9c7f1'><marimo-dropdown data-initial-value='[&quot;Numerical&quot;]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Choose Encoder&lt;/span&gt;&lt;/span&gt;&quot;' data-options='[&quot;LabelEncoder&quot;, &quot;OneHotEncoder&quot;, &quot;Numerical&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false'></marimo-dropdown></marimo-ui-element></div></div></div><div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div><span class=\"markdown prose dark:prose-invert\"><h3 id=\"va\">v(A)</h3></span></div><div><marimo-ui-element object-id='SeEL-1' random-id='107512e1-5635-bcbd-e3b4-4237c1d4f104'><marimo-dropdown data-initial-value='[&quot;Numerical&quot;]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Choose Encoder&lt;/span&gt;&lt;/span&gt;&quot;' data-options='[&quot;LabelEncoder&quot;, &quot;OneHotEncoder&quot;, &quot;Numerical&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false'></marimo-dropdown></marimo-ui-element></div></div></div><div><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div><span class=\"markdown prose dark:prose-invert\"><h3 id=\"_1\">\u03c4</h3></span></div><div><marimo-ui-element object-id='SeEL-2' random-id='c007ebcf-eddd-e38e-4a73-f110371b050b'><marimo-dropdown data-initial-value='[&quot;Numerical&quot;]' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Choose Encoder&lt;/span&gt;&lt;/span&gt;&quot;' data-options='[&quot;LabelEncoder&quot;, &quot;OneHotEncoder&quot;, &quot;Numerical&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false'></marimo-dropdown></marimo-ui-element></div></div></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mNBd",
+      "code_hash": "d84141d11f7365e1a35ad44f84fff712",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='mNBd-0' random-id='b73ecf09-6bfe-a0da-1147-6933aba0ceef'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;./@file/1415-6974-h7v11qvB.csv&quot;' data-total-rows='3423' data-total-columns='17' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;EN(A)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;EN(B)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;Lowest distortion&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;l(A-O)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;l(B-O)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(AVI)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(AXII)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(BVI)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;tG&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u0394ENR&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u03bc&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u03c4&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_1&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_2&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_3&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_4&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_5&quot;, [&quot;number&quot;, &quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-row-headers='[&quot;&quot;]' data-has-stable-row-id='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "zVhy",
+      "code_hash": "8cde536267eadc7522b6d974da5f2788",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='SFPL-2' random-id='072d6d87-f348-e135-85cf-ffcb247f6357'><marimo-button data-initial-value='0' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Run Encoder&lt;/span&gt;&lt;/span&gt;&quot;' data-kind='&quot;neutral&quot;' data-disabled='false' data-full-width='false'></marimo-button></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkmc",
+      "code_hash": "a954482fd4e670b1b3d9f6041634776f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZwgD",
+      "code_hash": "73fbcf820dae83a9c563563bfbe987d9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "VFss",
+      "code_hash": "bad2ea31303a37eb3f5817519bd60e71",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "ancestor-stopped",
+          "evalue": "This cell wasn't run because an ancestor was stopped with `mo.stop`: ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QRAP",
+      "code_hash": "0ea7d8e304326b351b65a6c981f89e4b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='QRAP-0' random-id='dd528a2c-804f-5880-8307-00866272d5b2'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;./@file/1440-6974-iu339Q16.csv&quot;' data-total-rows='3423' data-total-columns='18' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;EN(A)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;EN(B)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;Lowest distortion&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;l(A-O)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;l(B-O)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(AVI)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(AXII)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;r(BVI)(&#92;u00c5)&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;tG&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;&#92;u0394ENR&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u03bc&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;&#92;u03c4&quot;, [&quot;string&quot;, &quot;object&quot;]], [&quot;v(A)_1&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_2&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_3&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_4&quot;, [&quot;number&quot;, &quot;float64&quot;]], [&quot;v(A)_5&quot;, [&quot;number&quot;, &quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-row-headers='[&quot;&quot;]' data-has-stable-row-id='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vrfJ",
+      "code_hash": "3878aa6d2673aad8928ce6aaef3c9d22",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "__scratch__",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
