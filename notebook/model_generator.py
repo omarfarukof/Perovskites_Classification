@@ -38,7 +38,8 @@ def _():
     from sklearn.svm import SVC
     from sklearn.ensemble import RandomForestClassifier
     from xgboost import XGBClassifier
-    return RandomForestClassifier, SVC, XGBClassifier
+    from lightgbm import LGBMClassifier
+    return LGBMClassifier, RandomForestClassifier, SVC, XGBClassifier
 
 
 @app.cell
@@ -310,9 +311,10 @@ def _(LabelEncoder, OneHotEncoder, pd, to_numeric):
             elif type(col_encoders[_col]) == type(OneHotEncoder()):
                 _encoded_df = col_encoders[_col].fit_transform(data[[_col]]).toarray()
                 _one_hot_cols = col_encoders[_col].get_feature_names_out()
-                _encoded_df = pd.DataFrame(_encoded_df, columns=_one_hot_cols , dtype=bool)
+                _encoded_df = pd.DataFrame(_encoded_df, columns=_one_hot_cols)
 
                 data[_encoded_df.columns] = _encoded_df.to_numpy()
+                data = data.drop(_col, axis=1)
 
 
             elif type(col_encoders[_col]) == type(LabelEncoder()):
@@ -539,7 +541,7 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    _model_names = ['Random Forest Classifier', 'SVM Classifier', 'XGBoost Classifier']
+    _model_names = ['Random Forest Classifier', 'SVM Classifier', 'XGBoost Classifier', 'LightGBM Classifier']
     model_select_ui = mo.ui.dropdown(options=_model_names, value=_model_names[0] , label="Select Model")
 
     model_select_ui
@@ -553,7 +555,13 @@ def _(model_run_button):
 
 
 @app.cell
-def _(RandomForestClassifier, SVC, XGBClassifier, class_weight_dict):
+def _(
+    LGBMClassifier,
+    RandomForestClassifier,
+    SVC,
+    XGBClassifier,
+    class_weight_dict,
+):
     def get_model(model_name):
         if model_name == 'Random Forest Classifier':
             _model = RandomForestClassifier(
@@ -570,6 +578,12 @@ def _(RandomForestClassifier, SVC, XGBClassifier, class_weight_dict):
 
         elif model_name == 'SVM Classifier':
             _model = SVC(
+                class_weight=class_weight_dict,
+                random_state=42
+            )
+
+        elif model_name == 'LightGBM Classifier':
+            _model = LGBMClassifier(
                 class_weight=class_weight_dict,
                 random_state=42
             )
