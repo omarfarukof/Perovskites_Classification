@@ -1,7 +1,7 @@
 import marimo
 
 __generated_with = "0.11.22"
-app = marimo.App(width="medium")
+app = marimo.App(width="full")
 
 
 @app.cell
@@ -14,7 +14,8 @@ def _():
 def _():
     import pandas as pd
     import numpy as np
-    return np, pd
+    import tabulate
+    return np, pd, tabulate
 
 
 @app.cell
@@ -105,6 +106,12 @@ def _(mo):
         model_run_button,
         remove_data_button,
     )
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""# Perovskite Classification""")
+    return
 
 
 @app.cell(hide_code=True)
@@ -232,6 +239,12 @@ def _(data, final_feature_list, final_index):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""# Categorical to Numerical Encoding""")
+    return
+
+
+@app.cell
 def _(mo, reduced_data):
     # Convert categorical columns to numerical
     catagorical_cols = reduced_data.select_dtypes(include=["object"]).columns
@@ -282,26 +295,24 @@ def _(LabelEncoder, OneHotEncoder, pd):
 
 
 @app.cell
-def _():
-    return
-
-
-@app.cell
 def _(LabelEncoder, OneHotEncoder, pd, to_numeric):
     def catagorical_to_numerical(data, col_encoders, catagorical_cols):
-        # col_encoders = {}
-        # for _col in catagorical_cols:
-        #     col_encoders[_col] = get_encoder(_col, cat_encoders[_col].value)
 
         for _col, _ in col_encoders.items():
             if col_encoders[_col] == "to_numeric":
                 data[_col] = to_numeric(data, _col)
+
             elif type(col_encoders[_col]) == type(OneHotEncoder()):
-                _encoded_df = pd.DataFrame(col_encoders[_col].fit_transform(data[[_col]]).toarray(), columns=col_encoders[_col].get_feature_names_out())
-                data[col_encoders[_col].get_feature_names_out()] = _encoded_df
-                data = data.drop([_col], axis=1)
+                _encoded_df = col_encoders[_col].fit_transform(data[[_col]]).toarray()
+                _one_hot_cols = col_encoders[_col].get_feature_names_out()
+                _encoded_df = pd.DataFrame(_encoded_df, columns=_one_hot_cols , dtype=bool)
+
+                data[_encoded_df.columns] = _encoded_df.to_numpy()
+
+
             elif type(col_encoders[_col]) == type(LabelEncoder()):
                 data[_col] = col_encoders[_col].fit_transform(data[[_col,]].values.ravel())
+
         return data
     return (catagorical_to_numerical,)
 
@@ -429,6 +440,13 @@ def _(mo):
 
 
 @app.cell
+def _(mo):
+    feature_selection_button = mo.ui.run_button(label="Run Feature Selection")
+    feature_selection_button
+    return (feature_selection_button,)
+
+
+@app.cell
 def _(
     RFECV,
     RandomForestClassifier,
@@ -436,10 +454,16 @@ def _(
     X_train,
     balanced_accuracy_score,
     compute_class_weight,
+    feature_selection_button,
     make_scorer,
+    mo,
     np,
     y_train,
 ):
+    mo.stop(not feature_selection_button.value)
+
+
+
     # Compute class weights for cost sensitivity
     classes = np.unique(y_train)
     class_weights = compute_class_weight(
@@ -469,8 +493,15 @@ def _(
         n_jobs=-1
     )
 
-    # Fit RFECV
-    rfecv.fit(X_train, y_train)
+    for _ in mo.status.progress_bar(
+        range(1),
+        title="Loading",
+        subtitle="Please wait",
+        show_eta=True,
+        show_rate=True
+    ):
+        # Fit RFECV
+        rfecv.fit(X_train, y_train)
     return class_weight_dict, class_weights, classes, clf, rfecv, scorer
 
 
@@ -556,8 +587,15 @@ def _(get_model, mo, model_run_button, model_select_ui):
 
 
 @app.cell
-def _(X_features, X_test, X_train, model, y_train):
-    model.fit(X_train[X_features], y_train)
+def _(X_features, X_test, X_train, mo, model, y_train):
+    for _ in mo.status.progress_bar(
+        range(1),
+        title="Loading",
+        subtitle="Please wait",
+        show_eta=True,
+        show_rate=True
+    ):
+        model.fit(X_train[X_features], y_train)
     y_pred = model.predict(X_test[X_features])
     return (y_pred,)
 
@@ -590,13 +628,23 @@ def _(generate_confusion_matrix, y_pred, y_test):
 
 
 @app.cell
+def _(mo):
+    gen_report_button = mo.ui.run_button(label="Generate Report")
+    gen_report_button
+    return (gen_report_button,)
+
+
+@app.cell
 def _(
     classification_report_to_dataframe,
     col_encoders,
+    gen_report_button,
+    mo,
     target_ui,
     y_pred,
     y_test,
 ):
+    mo.stop(not gen_report_button.value)
     _labels = col_encoders[target_ui.value].classes_
     # Generate report DataFrames
     classification_report_to_dataframe(
