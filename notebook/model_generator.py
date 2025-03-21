@@ -505,7 +505,9 @@ def _(
         title="Loading",
         subtitle="Please wait",
         show_eta=True,
-        show_rate=True
+        show_rate=True,
+        completion_title = "Feature Selection Complete",
+        completion_subtitle = ""
     ):
         # Fit RFECV
         rfecv.fit(X_train, y_train)
@@ -613,7 +615,9 @@ def _(X_features, X_test, X_train, mo, model, y_train):
         title="Loading",
         subtitle="Please wait",
         show_eta=True,
-        show_rate=True
+        show_rate=True,
+        completion_title = "Model Training Complete",
+        completion_subtitle = ""
     ):
         model.fit(X_train[X_features], y_train)
     y_pred = model.predict(X_test[X_features])
