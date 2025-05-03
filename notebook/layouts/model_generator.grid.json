@@ -2,7 +2,7 @@
   "type": "grid",
   "data": {
     "columns": 24,
-    "rowHeight": 20,
+    "rowHeight": 50,
     "maxWidth": 1400,
     "bordered": true,
     "cells": [
@@ -29,6 +29,134 @@
       },
       {
         "position": null
+      },
+      {
+        "position": null
+      },
+      {
+        "position": null
+      },
+      {
+        "position": null
+      },
+      {
+        "position": null
+      },
+      {
+        "position": [
+          0,
+          0,
+          24,
+          3
+        ]
+      },
+      {
+        "position": [
+          0,
+          4,
+          12,
+          1
+        ]
+      },
+      {
+        "position": [
+          0,
+          5,
+          12,
+          4
+        ]
+      },
+      {
+        "position": [
+          0,
+          9,
+          12,
+          29
+        ]
+      },
+      {
+        "position": null
+      },
+      {
+        "position": [
+          12,
+          4,
+          12,
+          1
+        ]
+      },
+      {
+        "position": [
+          12,
+          5,
+          12,
+          12
+        ],
+        "scrollable": true
+      },
+      {
+        "position": null
+      },
+      {
+        "position": null
+      },
+      {
+        "position": null
+      },
+      {
+        "position": [
+          12,
+          17,
+          12,
+          1
+        ]
+      },
+      {
+        "position": null
+      },
+      {
+        "position": [
+          12,
+          18,
+          12,
+          7
+        ],
+        "scrollable": true
+      },
+      {
+        "position": [
+          12,
+          25,
+          12,
+          5
+        ],
+        "scrollable": true
+      },
+      {
+        "position": [
+          12,
+          30,
+          12,
+          3
+        ],
+        "scrollable": true
+      },
+      {
+        "position": [
+          12,
+          34,
+          12,
+          3
+        ],
+        "scrollable": true
+      },
+      {
+        "position": [
+          13,
+          33,
+          3,
+          1
+        ]
       },
       {
         "position": null

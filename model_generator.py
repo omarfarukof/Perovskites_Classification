@@ -3,7 +3,7 @@
 import marimo
 
 __generated_with = "0.13.3"
-app = marimo.App(width="medium")
+app = marimo.App(width="full")
 
 
 @app.cell
@@ -110,98 +110,28 @@ def _(mo):
     mo.md(
         r"""
         # Perovskite Classification
-        ## Synergistic Convergence of Computational Paradigms and Machine Learning Heuristics for the Prognostication of Perovskite Crystallography, Formability, and Thermodynamic Viability.
+        ## Synergistic Convergence of Computational Paradigmsand Machine Learning Heuristics for the Prognostication of Per-ovskite Crystallography, Formability, and Thermodynamic Viabil-ity
         """
     )
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""---""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""# About Us""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.hstack([
-        mo.md(""),
-        mo.md(
-        """
-        ### Students
-        |Name Student| ID| Group|
-        |:--|:--:|:--:|
-        |Adib Sadman Al Haque| 200021103|
-        |Zerin Yeasmin| 200021108|A4|
-        |Omar Faruk| 200021118|
-    """), 
-        mo.md(
-            """
-        ### Supervisors
-        |Name| Course|
-        |:--|:--:|
-        |Md Arefin Rabbi Emon| AI/ML|
-        """),
-        mo.md(""),
-        mo.md(""),
-        mo.md(""),
-        mo.md(""),
-        mo.md(""),
-        mo.md("")
-    ],align="center",justify="space-between"
-    )
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md("""---""")
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(
-        """
-        # About Application
-
-        We have created an Application to quickly perform some analysis on a given dataset to fasforword our Perovskite Classification.
-        This tool and graphically perform the following tasks:
-
-        - Load the data
-        - Feature Selection (malually & automatically)
-        - Feature Encoding (Catagory to Numerical)
-        - Model Training
-        - Generate Report
-        """
-    )
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""---""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""# Applicalion""")
     return
 
 
 @app.cell
 def _(dataset_upload, load_data_button, mo):
-    mo.vstack([
+    _dataset_upload = mo.vstack([
         dataset_upload,
         mo.md(f"**{dataset_upload.name()}**"),
         load_data_button,
+    ])
+
+
+
+    mo.carousel([
+        _dataset_upload,
+        "By the marimo team",
+        mo.md("## What is marimo?"),
+        mo.md("![marimo moss ball](https://marimo.io/logo.png)"),
+        mo.md("## Questions?"),
     ])
     return
 
@@ -342,7 +272,7 @@ def _(data, final_feature_list, final_index):
 
 @app.cell
 def _(mo):
-    mo.md(r"""## Categorical to Numerical Encoding""")
+    mo.md(r"""# Categorical to Numerical Encoding""")
     return
 
 
@@ -538,7 +468,7 @@ def _(X, train_test_split, y):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Feature Selection""")
+    mo.md(r"""# Feature Selection""")
     return
 
 
@@ -633,7 +563,7 @@ def _(plt, rfecv):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Model Training""")
+    mo.md(r"""# Model Training""")
     return
 
 
@@ -749,21 +679,9 @@ def _(generate_confusion_matrix, y_pred, y_test):
 
 @app.cell
 def _(mo):
-    mo.md(r"""---""")
-    return
-
-
-@app.cell
-def _(mo):
     gen_report_button = mo.ui.run_button(label="Generate Report")
     gen_report_button
     return (gen_report_button,)
-
-
-@app.cell
-def _(mo):
-    mo.md(r"""---""")
-    return
 
 
 @app.cell
@@ -862,8 +780,7 @@ def _(
 
 
 @app.cell
-def _(mo):
-    mo.md(r"""---""")
+def _():
     return
 
 
