@@ -13,6 +13,33 @@ def _():
 
 
 @app.cell
+def _(mo):
+    mo.sidebar(
+        [
+            mo.md("# ML Classifier"),
+            mo.nav_menu(
+                {
+                    "#/Perovskite Classification": f"{mo.icon('lucide:home')} Home",
+                    "#/About Us": f"{mo.icon('lucide:user')} About Us",
+                    "#/About Application": f"{mo.icon('lucide:app-window')} About App",
+                    # "#/Applicalion": f"{mo.icon('lucide:layout-grid')} Application",
+                    f"{mo.icon('lucide:layout-grid')} Applicalion": {
+                        "#/Categorical to Numerical Encoding": "Feature Encoding",
+                        "#/Feature Selection": "Feature Selection",
+                        "#Model Training": "Model Training",
+                    },
+                    "Project Links": {
+                        "https://github.com/omarfarukof/Perovskites_Classification.git": "GitHub",
+                    },
+                },
+                orientation="vertical",
+            ),
+        ]
+    )
+    return
+
+
+@app.cell
 def _():
     import pandas as pd
     import numpy as np
