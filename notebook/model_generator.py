@@ -244,6 +244,12 @@ def _(dataset_upload, load_data_button, mo, pd, to_file):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
+
+
+@app.cell
 def _(data, mo):
     _default = ["S.No", "Compound", "A", "B", "In literature", "v(B)"]
     feature_drop = mo.ui.table(
@@ -263,14 +269,26 @@ def _(data, feature_drop):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
+
+
+@app.cell
 def _(data, feature_drop, mo):
     remove_data_button_col = mo.ui.table(
         data=list(set(data.columns.to_list()) - set(feature_drop.value)),
-        label="## Select features to remove data",
+        label="## Select features to remove Missing Data",
         # initial_selection= [i for i, x in enumerate(_cols) if x in _default],
     )
     remove_data_button_col
     return (remove_data_button_col,)
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
 
 
 @app.cell
@@ -298,9 +316,21 @@ def _(data, feature_drop, mo, pd, remove_data_button_col):
     return (dr_table,)
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
+
+
 @app.cell(hide_code=True)
 def _(remove_data_button):
     remove_data_button
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
     return
 
 
@@ -342,6 +372,12 @@ def _(data, final_feature_list, final_index):
 
 @app.cell
 def _(mo):
+    mo.md(r"""---""")
+    return
+
+
+@app.cell
+def _(mo):
     mo.md(r"""## Categorical to Numerical Encoding""")
     return
 
@@ -369,8 +405,20 @@ def _(mo, reduced_data):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
+
+
+@app.cell
 def _(encode_data_button):
     encode_data_button
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
     return
 
 
@@ -421,6 +469,12 @@ def _(LabelEncoder, OneHotEncoder, pd, to_numeric):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
+
+
+@app.cell
 def _(
     cat_encoders,
     catagorical_cols,
@@ -439,10 +493,22 @@ def _(
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
+
+
+@app.cell
 def _(mo, prep_data):
     target_ui = mo.ui.dropdown(options=prep_data.columns.to_list() , label="Choose Target")
     target_ui
     return (target_ui,)
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
 
 
 @app.cell
@@ -536,6 +602,12 @@ def _(X, train_test_split, y):
     return X_test, X_train, y_test, y_train
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""## Feature Selection""")
@@ -547,6 +619,12 @@ def _(mo):
     feature_selection_button = mo.ui.run_button(label="Run Feature Selection")
     feature_selection_button
     return (feature_selection_button,)
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
 
 
 @app.cell
@@ -631,6 +709,12 @@ def _(plt, rfecv):
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""## Model Training""")
@@ -644,6 +728,12 @@ def _(mo):
 
     model_select_ui
     return (model_select_ui,)
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""---""")
+    return
 
 
 @app.cell
